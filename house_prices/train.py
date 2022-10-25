@@ -1,16 +1,14 @@
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_log_error
 from lightgbm import LGBMRegressor
-from pathlib import Path
 import numpy as np
 import pandas as pd
 import joblib
-from preprocess import preprocessing_pipe
+import sys
 
-# project_dir = Path.cwd()
-# model_dir = project_dir/ 'models'
-# model_path = models /'LGBM_model.joblib'
-# sys.path.append(str(project_dir))
+# sys.path.append('../')
+
+from houseprices.preprocess import preprocessing_pipe
 
 
 def split_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -28,7 +26,7 @@ def compute_rmsle(test_y: np.ndarray, pred_test_y: np.ndarray,
     return round(rmsle, precision)
 
 
-def build_model(df: pd.DataFrame, model_path: Path) -> int:
+def build_model(df: pd.DataFrame) -> int:
     score = {}
     preprocessed_df = preprocessing_pipe(df)
     model = LGBMRegressor(num_leaves=4, n_estimators=615,
@@ -36,14 +34,13 @@ def build_model(df: pd.DataFrame, model_path: Path) -> int:
     train_x, test_x, train_y, test_y = split_data(preprocessed_df)
     model.fit(train_x, train_y)
     pred_test_y = model.predict(test_x)
-    joblib.dump(model, model_path)
+    joblib.dump(model, 'models/LGBM_model.joblib')
     score['rmse'] = compute_rmsle(test_y, pred_test_y, 2)
     return score
 
 
 if __name__ == '__main__':
-    project_dir = Path.cwd().parent
-    model_path = project_dir / 'models'/'LGBM_model.joblib'
-    df = pd.read_csv('../data/train.csv')
-    score = build_model(df, model_path)
+    df = pd.read_csv('data/train.csv')
+    columns = ["SalePrice", "OverallQual", "GrLivArea", "GarageArea", "TotalBsmtSF", "Street", "LotShape"]
+    score = build_model(df[columns])
     print(score)
