@@ -24,3 +24,4 @@ wincertstore=0.2=py310haa95532_2
 xz=5.2.5=h8cc25b3_1
 zipp=3.8.0=py310haa95532_0
 zlib=1.2.12=h8cc25b3_3
+pip install -e git+http://MyPackaage.git.HousePricePrediction
