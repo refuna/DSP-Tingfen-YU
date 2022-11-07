@@ -39,7 +39,7 @@ def scaled_data(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def get_OneHotEncoder(df: pd.DataFrame) -> sp.OneHotEncoder:
+def get_one_hot_encoder(df: pd.DataFrame) -> sp.OneHotEncoder:
     one_hot_encoder_path = 'models/OneHotEncoder.joblib'
     cols_ohe = df.select_dtypes(include="object").columns.tolist()
     if os.path.exists(one_hot_encoder_path ):
@@ -53,7 +53,7 @@ def get_OneHotEncoder(df: pd.DataFrame) -> sp.OneHotEncoder:
     return one_hot_encoder
 
 
-def df_OneHotEncoder(df: pd.DataFrame,
+def df_one_hot_encoder(df: pd.DataFrame,
                      onehotencoder: sp.OneHotEncoder) -> pd.DataFrame:
     cols_ohe = df.select_dtypes(include="object").columns.tolist()
     df_ohe = df[cols_ohe]
@@ -69,8 +69,8 @@ def preprocessing_pipe(df: pd.DataFrame) -> pd.DataFrame:
     # df1 = impute_outlier(df)
     df2 = impute_missing_data(df)
     df3 = scaled_data(df2)
-    ohe = get_OneHotEncoder(df3)
-    df4 = df_OneHotEncoder(df3, ohe)
+    ohe = get_one_hot_encoder(df3)
+    df4 = df_one_hot_encoder(df3, ohe)
     return df4
 
 
@@ -127,17 +127,3 @@ if __name__ == '__main__':
 #         df[col] = le.transform(df[col])
 #     return df
 
-# def scaled_data(df: pd.DataFrame) -> pd.DataFrame:
-#     continuous_columns = df.select_dtypes(include='number').columns.tolist()
-#     sc = sp.StandardScaler()
-#     if 'SalePrice' in df.columns:
-#         scaled_clos = df[continuous_columns].drop(
-#             ['SalePrice'], axis=1).columns.tolist()
-#         df_scaled = pd.DataFrame(
-#             sc.fit_transform(df[scaled_clos]), columns=scaled_clos)
-#         df[scaled_clos] = df_scaled
-#     else:
-#         df_scaled = pd.DataFrame(sc.fit_transform(df[continuous_columns]),
-#                                  columns=continuous_columns)
-#         df[continuous_columns] = df_scaled
-#     return df
