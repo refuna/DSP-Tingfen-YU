@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/1/38792789ec2a4f42915430f8ce7c4510/artifacts
+end_time: 1668956132039
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: 38792789ec2a4f42915430f8ce7c4510
+run_name: unruly-newt-128
+run_uuid: 38792789ec2a4f42915430f8ce7c4510
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1668956113781
+status: 3
+tags: []
+user_id: tingf

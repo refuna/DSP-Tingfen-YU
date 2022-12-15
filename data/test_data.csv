@@ -1,0 +1,6 @@
+OverallQual,GrLivArea,GarageArea,TotalBsmtSF,Street,LotShape
+2,120,200,110, Pave, Reg
+5,400,220,450, Pave, IR1
+3,280,490,300, Pave, Reg
+8,330,450,500, Pave, IR1
+9,600,730,830, Pave, IR2
