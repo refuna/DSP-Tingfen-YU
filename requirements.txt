@@ -1,27 +1,15 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: win-64
-bzip2=1.0.8=he774522_0
-ca-certificates=2022.07.19=haa95532_0
-certifi=2022.6.15=py310haa95532_0
-flake8=4.0.1=pyhd3eb1b0_1
-importlib-metadata=4.11.3=py310haa95532_0
-libffi=3.4.2=hd77b12b_4
-mccabe=0.7.0=pyhd3eb1b0_0
-openssl=1.1.1q=h2bbff1b_0
-pip=22.1.2=py310haa95532_0
-pycodestyle=2.8.0=pyhd3eb1b0_0
-pyflakes=2.4.0=pyhd3eb1b0_0
-python=3.10.4=hbb2ffb3_0
-setuptools=63.4.1=py310haa95532_0
-sqlite=3.39.2=h2bbff1b_0
-tk=8.6.12=h2bbff1b_0
-tzdata=2022a=hda174b7_0
-vc=14.2=h21ff451_1
-vs2015_runtime=14.27.29016=h5e58377_2
-wheel=0.37.1=pyhd3eb1b0_0
-wincertstore=0.2=py310haa95532_2
-xz=5.2.5=h8cc25b3_1
-zipp=3.8.0=py310haa95532_0
-zlib=1.2.12=h8cc25b3_3
-pip install -e git+http://MyPackaage.git.HousePricePrediction
+requests==2.28.1
+streamlit==1.14.1
+pandas==1.5.1
+numpy==1.23.4
+psycopg2==2.9.5
+pydantic==1.10.2
+fastapi==0.87.0
+uvicorn==0.19.0
+streamlit-option-menu==0.3.2
+lightgbm==3.3.3
+pandas==1.5.1
+# pip install -e git+http://MyPackage.git.HousePricePrediction

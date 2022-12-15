@@ -1,0 +1,72 @@
+{
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "meta": {},
+      "kwargs": {
+        "column": "OverallQual",
+        "min_value": 0,
+        "max_value": 10,
+        "mostly": 0.9
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "meta": {},
+      "kwargs": {
+        "column": "GrLivArea",
+        "min_value": 0,
+        "max_value": 1000,
+        "mostly": 0.9
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "meta": {},
+      "kwargs": {
+        "column": "GarageArea",
+        "min_value": 0,
+        "max_value": 10000,
+        "mostly": 0.9
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "meta": {},
+      "kwargs": {
+        "column": "TotalBsmtSF",
+        "min_value": 0,
+        "max_value": 10000,
+        "mostly": 0.9
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "meta": {},
+      "kwargs": {
+        "column": "Street",
+        "value_set": [
+          " Pave"
+        ]
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "meta": {},
+      "kwargs": {
+        "column": "LotShape",
+        "value_set": [
+          " Reg",
+          " IR1",
+          " IR2"
+        ]
+      }
+    }
+  ],
+  "ge_cloud_id": null,
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "default",
+  "meta": {
+    "great_expectations_version": "0.15.39"
+  }
+}

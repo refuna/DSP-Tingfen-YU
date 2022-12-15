@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/1/ebcacc0023ee4d61aa77d193187ba1f3/artifacts
+end_time: 1668956113732
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+run_id: ebcacc0023ee4d61aa77d193187ba1f3
+run_name: overjoyed-shoat-923
+run_uuid: ebcacc0023ee4d61aa77d193187ba1f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1668956097413
+status: 3
+tags: []
+user_id: tingf
